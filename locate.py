@@ -33,8 +33,8 @@ def luejaparsi():
 def locate(iplista):
     loclist = []
     for ip in iplista:
-        r = requests.get("http://freegeoip.net/csv/" + ip)
-        location = r.content.split(',')[2]
+        r = requests.get("https://ip2c.org/" + ip)
+        location = r.content.split(';')[2]
         loclist.append(location)
     return loclist
 
