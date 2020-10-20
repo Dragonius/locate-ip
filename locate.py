@@ -60,4 +60,34 @@ def plotlist(labels, values):
 
 #locate(luejaparsi())
 lab, val = rank_list(locate(luejaparsi()))
-plotlist(lab, val)
+
+print (lab)
+print (val)
+
+#with open('country.csv', 'w' ) as file:
+#    writer = csv.writer(file, delimiter=' ', quotechar=' ')
+#    writer.writerows(lab)
+
+f = open('country.csv', 'w')
+
+with f:
+
+    writer = csv.writer(f)
+    
+    for row in val:
+        writer.writerow([row])
+    for row in lab:
+            writer.writerow([row])
+
+# join two at a time
+data_tuples = zip(lab[::2], val[1::2])
+print str((data_tuples))
+
+#with open('outputfile.txt', 'w') as csvfile:
+#    writer = csv.writer(csvfile)
+#    writer.writerows([name + [location] for name, location in data_tuples])
+
+
+
+
+#plotlist(lab, val)
